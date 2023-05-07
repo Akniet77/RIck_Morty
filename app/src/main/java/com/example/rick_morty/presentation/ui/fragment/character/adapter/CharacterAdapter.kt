@@ -8,18 +8,23 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.rick_morty.databinding.ItemMovieBinding
 
-class CharacterAdapter : Adapter<CharacterAdapter.AdapterViewHolder>() {
+class CharacterAdapter(private val click : (id: Int) -> Unit) : Adapter<CharacterAdapter.AdapterViewHolder>() {
     private var list: ArrayList<com.example.rick_morty.data.model.Result> = arrayListOf()
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ) = AdapterViewHolder(
+    fun setList(list: ArrayList<com.example.rick_morty.data.model.Result> = arrayListOf()){
+        this.list = list
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = AdapterViewHolder(
         ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun onBindViewHolder(holder: CharacterAdapter.AdapterViewHolder, position: Int) {
         holder.onBind(list[position])
+        holder.itemView.setOnClickListener {
+            click(list[position].id)
+        }
     }
 
     override fun getItemCount() = list.size

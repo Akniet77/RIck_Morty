@@ -10,4 +10,9 @@
         android:name="com.example.rick_morty.presentation.ui.fragment.character.CharacterFragment"
         android:label="fragment_character"
         tools:layout="@layout/fragment_character" />
+    <fragment
+        android:id="@+id/detailCharacterFragment"
+        android:name="com.example.rick_morty.presentation.ui.fragment.DetailCharacter.DetailCharacterFragment"
+        android:label="fragment_detail_character"
+        tools:layout="@layout/fragment_detail_character" />
 </navigation>

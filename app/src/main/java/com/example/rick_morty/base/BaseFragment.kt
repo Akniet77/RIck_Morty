@@ -23,11 +23,15 @@ abstract class BaseFragment<Binding : ViewBinding>(private val inflate: Inflate<
         savedInstanceState: Bundle?
     ): View? {
         _binding = inflate(inflater, container, false)
+        setupUI()
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setupObServer()
     }
 
     abstract fun setupUI()
