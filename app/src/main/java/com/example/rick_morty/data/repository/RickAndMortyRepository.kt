@@ -14,14 +14,15 @@ import retrofit2.Response
 class RickAndMortyRepository {
     private val apiService = retrofit.create(ApiService::class.java)
 
-    fun getCharacter(): LiveData<MainResponse<Result>>{
+
+    fun getCharacter(): LiveData<MainResponse<Result>> {
         val liveData = MutableLiveData<MainResponse<Result>>()
         apiService.getCharacters().enqueue(object : retrofit2.Callback<MainResponse<Result>> {
             override fun onResponse(
                 call: Call<MainResponse<Result>>,
                 response: Response<MainResponse<Result>>
             ) {
-                    liveData.value = response.body()
+                liveData.value = response.body()
             }
 
             override fun onFailure(call: Call<MainResponse<Result>>, t: Throwable) {

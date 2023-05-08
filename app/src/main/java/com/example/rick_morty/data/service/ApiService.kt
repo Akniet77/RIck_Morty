@@ -13,6 +13,6 @@ interface ApiService {
 
     @GET("character/{id}")
     fun getDetailCharacter(
-        @Path("id") id: String
+        @Path("id") id: String,
     ): Call<com.example.rick_morty.data.model.Result>
 }

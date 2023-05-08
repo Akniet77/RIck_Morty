@@ -14,4 +14,6 @@ class CharacterViewModel : ViewModel(){
     fun getCharacter() {
         liveData = repository.getCharacter()
     }
+
+
 }

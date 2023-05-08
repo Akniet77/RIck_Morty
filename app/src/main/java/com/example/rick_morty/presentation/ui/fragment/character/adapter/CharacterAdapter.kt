@@ -1,9 +1,8 @@
 package com.example.rick_morty.presentation.ui.fragment.character.adapter
 
-import android.graphics.Movie
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.rick_morty.databinding.ItemMovieBinding
@@ -11,6 +10,7 @@ import com.example.rick_morty.databinding.ItemMovieBinding
 class CharacterAdapter(private val click : (id: Int) -> Unit) : Adapter<CharacterAdapter.AdapterViewHolder>() {
     private var list: ArrayList<com.example.rick_morty.data.model.Result> = arrayListOf()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(list: ArrayList<com.example.rick_morty.data.model.Result> = arrayListOf()){
         this.list = list
         notifyDataSetChanged()
@@ -38,17 +38,6 @@ class CharacterAdapter(private val click : (id: Int) -> Unit) : Adapter<Characte
             binding.txtRassa.text = result.type
             binding.txtGender.text = result.gender
             binding.txtStatus.text = result.statusLife
-        }
-
-        fun bind(listItem: Movie) {
-            binding.image.setOnClickListener {
-                Toast.makeText(it.context, "нажал на ${binding.image}", Toast.LENGTH_SHORT)
-                    .show()
-            }
-            binding.txtName.setOnClickListener {
-                Toast.makeText(it.context, "нажал на ${binding.txtName.text}", Toast.LENGTH_SHORT)
-                    .show()
-            }
         }
     }
 }
