@@ -1,15 +1,15 @@
-package com.example.rick_morty.presentation.ui.fragment.DetailCharacter
+package com.example.rick_morty.presentation.ui.fragment.detailCharacter
 
 import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import com.example.rick_morty.base.BaseFragment
 import com.example.rick_morty.data.service.ApiService
-import com.example.rick_morty.data.service.RetrofitService
 import com.example.rick_morty.databinding.FragmentDetailCharacterBinding
+import com.example.rick_morty.di.RetrofitModule
 import com.example.rick_morty.presentation.ui.fragment.character.adapter.loadImage
-import retrofit2.create
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class DetailCharacterFragment :
     BaseFragment<FragmentDetailCharacterBinding>(FragmentDetailCharacterBinding::inflate){
 
@@ -24,7 +24,7 @@ class DetailCharacterFragment :
             val id = arguments?.getInt("id").toString()
 
             viewModel.getDetail(id)
-            apiService = RetrofitService.retrofit.create()
+            apiService = RetrofitModule.provideRetrofit()
         }
     }
 

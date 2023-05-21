@@ -24,7 +24,6 @@ abstract class BaseFragment<Binding : ViewBinding>(private val inflate: Inflate<
     ): View? {
         _binding = inflate(inflater, container, false)
         setupUI()
-
         return binding.root
     }
 

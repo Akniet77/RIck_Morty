@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph.xml"
-    app:startDestination="@id/characterFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/characterFragment"
@@ -12,7 +12,34 @@
         tools:layout="@layout/fragment_character" />
     <fragment
         android:id="@+id/detailCharacterFragment"
-        android:name="com.example.rick_morty.presentation.ui.fragment.DetailCharacter.DetailCharacterFragment"
+        android:name="com.example.rick_morty.presentation.ui.fragment.detailCharacter.DetailCharacterFragment"
         android:label="fragment_detail_character"
         tools:layout="@layout/fragment_detail_character" />
+    <fragment
+        android:id="@+id/episodeCharacterFragment"
+        android:name="com.example.rick_morty.presentation.ui.fragment.episodeCharacter.EpisodeCharacterFragment"
+        android:label="fragment_episode_character"
+        tools:layout="@layout/fragment_episode_character" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.rick_morty.presentation.ui.fragment.locationCharacter.LocationFragment"
+        android:label="fragment_lacotion"
+        tools:layout="@layout/fragment_lacotion" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.rick_morty.presentation.ui.fragment.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/tabLayoutFragment"
+        android:name="com.example.rick_morty.presentation.ui.fragment.TabLayoutFragment"
+        android:label="fragment_tab_layout"
+        tools:layout="@layout/fragment_tab_layout" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.rick_morty.presentation.ui.fragment.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+
+
 </navigation>

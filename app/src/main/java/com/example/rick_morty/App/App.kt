@@ -1,11 +1,8 @@
 package com.example.rick_morty.App
 
 import android.app.Application
-import com.example.rick_morty.data.service.ApiService
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class App : Application() {
-
-    companion object {
-        lateinit var service: ApiService
-    }
 }
